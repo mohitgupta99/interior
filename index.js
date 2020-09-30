@@ -21,14 +21,16 @@ app.get("/",(req,res) =>{
 });
 app.get("/login",(req,res) =>{
     return res.send("you are visiting login route");
+    console.log("User is logged in ");
 });
 
 app.get("/admin",isLoggedIn,isAdmin,admin);
 
 app.get("/signup",(req,res) =>{
     return res.send("you are visiting signup route");
+    console.log("User is signed up");
 });
 
 app.listen(port,()=>{
-    console.log("server is up and running");
+    console.log("server is up and running on port ${port}");
 });

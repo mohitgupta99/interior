@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app =express();
-const port = 8000;
+const port = 3000;
 const admin=(req,res)=>{
     return res.send("this is admin dashboard");
 };
@@ -22,6 +22,7 @@ app.get("/",(req,res) =>{
 app.get("/login",(req,res) =>{
     return res.send("you are visiting login route");
     console.log("User is logged in ");
+    console.log("Login page has come ");
 });
 
 app.get("/admin",isLoggedIn,isAdmin,admin);
@@ -29,6 +30,7 @@ app.get("/admin",isLoggedIn,isAdmin,admin);
 app.get("/signup",(req,res) =>{
     return res.send("you are visiting signup route");
     console.log("User is signed up");
+    console.log("Login page has come ");
 });
 
 app.listen(port,()=>{
